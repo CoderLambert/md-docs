@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 import path from "path";
 
-const sideBarFiles = [
-  "index.md",
+const cleanArchSideBarFiles = [
+  "readme.md",
   "part1.md",
   "ch1.md",
   "ch2.md",
@@ -46,14 +46,13 @@ const sideBarFiles = [
   "afterword.md"
 ];
 
-const mdFiles = sideBarFiles.filter((file) => path.extname(file) === ".md").map((file) => {
-  return { text: file.replace(".md", ""), link: `/${file}` };
+const mdFiles = cleanArchSideBarFiles.filter((file) => path.extname(file) === ".md").map((file) => {
+  return { text: file.replace(".md", ""), link: `/books/cleanArch/${file}` };
 });
 
-console.log(mdFiles);
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "架构整洁之道 test",
+  title: "我的文档",
   description: "vitepress 线上阅读构建",
   srcDir: 'docs',
   // base: "/md-docs/",
@@ -64,7 +63,9 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
-    sidebar: mdFiles,
+    sidebar: {
+      '/books/cleanArch': mdFiles
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/CoderLambert/md-docs' }
     ],
@@ -80,5 +81,5 @@ export default defineConfig({
         timeStyle: 'medium'
       }
     }
-  }
+  },
 })
