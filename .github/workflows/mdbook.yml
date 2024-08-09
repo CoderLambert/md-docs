@@ -30,17 +30,25 @@ jobs:
           node-version: 20
           cache: npm # or pnpm / yarn
 
-      - name: Install dependencies
+      - name: Install dependencies 🔧
         run: npm install # or pnpm install / yarn install / bun install
 
-      - name: Build with VitePress
+      - name: Build with VitePress 🔧
         run: npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
 
-      - name: Deploy
+      - name: upload file
+        uses: kostyaten/ssh-server-deploy@v4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          scp_source: "./dist"
+          scp_target: ${{ secrets.TARGET }}
+
+      - name: Deploy  🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          # BRANCH: gh-pages
           branch: gh-pages
           folder: dist
           clean: true
