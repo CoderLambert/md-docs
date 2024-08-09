@@ -1,4 +1,4 @@
-# Clean Architecture 中文
+# 整洁架构之道
 
 <div style="margin: 0 auto; width: 40%;">
   <img src="./cover.jpg"/>
