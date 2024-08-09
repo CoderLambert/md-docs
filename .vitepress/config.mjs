@@ -57,11 +57,6 @@ export default defineConfig({
   srcDir: 'docs',
   themeConfig: {
     
-    // https://vitepress.dev/reference/default-theme-config
-    // nav: [
-    //   { text: 'Home', link: '/' },
-    //   { text: '第一部分 概述', link: '/docs/part1' }
-    // ],
     aside: false,
     search: {
       provider: 'local'
