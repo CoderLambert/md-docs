@@ -50,12 +50,14 @@ const mdFiles = sideBarFiles.filter((file) => path.extname(file) === ".md").map(
   return { text: file.replace(".md", ""), link: `/${file}` };
 });
 
+console.log(mdFiles);
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "架构整洁之道",
   description: "vitepress 线上阅读构建",
   srcDir: 'docs',
   base: "/md-docs/",
+  outDir: 'dist',
   themeConfig: {
     
     aside: false,
