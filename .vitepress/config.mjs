@@ -53,10 +53,10 @@ const mdFiles = sideBarFiles.filter((file) => path.extname(file) === ".md").map(
 console.log(mdFiles);
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "架构整洁之道",
+  title: "架构整洁之道 test",
   description: "vitepress 线上阅读构建",
   srcDir: 'docs',
-  base: "/md-docs/",
+  // base: "/md-docs/",
   outDir: 'dist',
   themeConfig: {
     
