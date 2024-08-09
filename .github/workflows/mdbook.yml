@@ -43,7 +43,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: 22
-          scp_source: "./dist"
+          scp_source: "dist/*"
           scp_target: ${{ secrets.TARGET }}
 
       - name: Deploy  🚀
