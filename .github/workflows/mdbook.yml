@@ -51,7 +51,8 @@ jobs:
       #     # 填写打包好的目录名称路径，本项目配置在根目录
       #     folder: dist
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
