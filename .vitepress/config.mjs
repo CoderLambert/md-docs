@@ -55,18 +55,16 @@ export default defineConfig({
   title: "架构整洁之道",
   description: "vitepress 线上阅读构建",
   srcDir: 'docs',
+  base: "/md-docs/",
   themeConfig: {
     
     aside: false,
     search: {
       provider: 'local'
     },
-    // sidebar: [
-    //   { text: 'Home', link: '/' },
-    // ]
     sidebar: mdFiles,
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/CoderLambert/md-docs' }
     ],
     docFooter: {
       prev: '上一章',
